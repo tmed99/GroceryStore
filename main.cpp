@@ -26,7 +26,7 @@ int main()
 
   if (input == 'a' || input == 'A')
   {
-  cout<<"What is the item? ";
+  cout<<"What is the item?";
   cin>>list[0];
   }
   } while (input == 'a' || input == 'A');
