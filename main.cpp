@@ -26,14 +26,14 @@ int main()
 
   if (input == 'a' || input == 'A')
   {
-  cout<<"\nWhat is the item? ";
+  cout<<"What is the item? ";
   cin>>list[0];
   }
   } while (input == 'a' || input == 'A');
 
   if (input == 'q' || input == 'Q')
   {
-  cout<<"\n==ITEMS TO BUY==";
+  cout<<"==ITEMS TO BUY==";
   cout<<"\n1 "<<list[0]<<"";
   cout<<"\n2 "<<list[1]<<"";
   cout<<"\n3 "<<list[2]<<"";
