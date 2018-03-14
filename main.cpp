@@ -1,45 +1,53 @@
 //Author: Tanya Medina-Mercado
 #include<iostream>
 #include<string>
+#include<vector>
 using namespace std;
 
 int main()
 {
-  string list[5];
-  int numItems = 0;
+  vector<string>list;
   char input;
   string item;
   
-  do
-  {
+  list.resize(0);
+
   cout<<"\n==GROCERY LIST MANAGER==";
   cout<<"\nEnter your choice: ";
   cout<<"\n (A)dd an item";
   cout<<"\n (Q)uit";
   cout<<"\nYour choice (A/Q): ";
   cin>>input;
-  
-  if (numItems > 5)
-  {
-  cout<<"You'll need a bigger list!";
-  }
+   
+   if (input == 'a' || input == 'A')
+      {
+      do
+        {
+        cout<<"What is the item? (Enter 'q' to quit)";
+        cin>>item;
+        list.push_back(item);
+        } while ( item != 'q' || item != 'Q');
+      
+      list.pop_back();
 
-  if (input == 'a' || input == 'A')
-  {
-  cout<<"What is the item?";
-  cin>>list[0];
-  }
-  } while (input == 'a' || input == 'A');
+      if (list.empty() == true)
+         {
+         cout<<"No items to buy!\n";
+         }
+      if (list.empty() == false)
+         {
+         cout<<"The items in your list are..."<<endl;
+         }
+       }
 
-  if (input == 'q' || input == 'Q')
-  {
-  cout<<"==ITEMS TO BUY==";
-  cout<<"\n1 "<<list[0]<<"";
-  cout<<"\n2 "<<list[1]<<"";
-  cout<<"\n3 "<<list[2]<<"";
-  cout<<"\n4 "<<list[3]<<"";
-  cout<<"\n5 "<<list[4]<<"";
-  }
+   if (input == 'q' || input == 'Q')
+      {
+       if (list.empty() == true)
+         {
+         cout<<"No items to buy!\n";
+         }
+      }
 
- return 0;
-}
+return 0;
+ 
+ }
